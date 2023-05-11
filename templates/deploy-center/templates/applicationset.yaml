@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: {{ include "deploy-center.fullname" . }}
+  annotations:
+    templateName: {{ .Template.Name }}
+    templateBasePath: {{ .Template.BasePath }}
+spec:
+  generators:
+  - git:
+      repoURL: 'git@github.com:Tiriyon/demo-deploy-center.git'
+      revision: main
+      files:
+      - path: "{{ .Values.global.path }}/configs/*.yaml"
+  template:
+    metadata:
+      name: '{{`{{ path[1] }}-{{ path[2] }}-{{ argocd.appName }}`}}'
+    spec:
+      destination:
+        name: '{{`{{ path[1] }}`}}'
+        namespace: '{{`{{ path[2] }}`}}'
+      project: default
+      source:
+        helm:
+          values: '{{`{{ source.helm.values }}`}}'
+        path: '{{`{{ source.path }}`}}'
+        repoURL: 'git@github.com:Tiriyon/appmanifests.git'
+        {{/*
+        targetRevision: main
+        */}}
+        targetRevision: '{{`{{ path[2] }}`}}'
+      syncPolicy:
+        automated: {
+          prune: true
+        }
+        syncOptions:
+          - CreateNamespace=true
