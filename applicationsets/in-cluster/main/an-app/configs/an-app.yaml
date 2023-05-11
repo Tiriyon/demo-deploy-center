@@ -2,6 +2,6 @@ argocd:
   appName: demo-app
 destination:
 source:
-  path: an_app
+  path: demo_app
   helm:
     values: |
