@@ -6,10 +6,9 @@ type: application
 
 version: 0.1.0
 
-
 appVersion: "0.1.0"
 
-dependencies: 
+dependencies:
   - name: deploy-center
     version: "0.1.0"
     repository: "file://../../../../templates/deploy-center"
