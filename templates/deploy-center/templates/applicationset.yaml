@@ -24,7 +24,7 @@ spec:
         helm:
           values: '{{`{{ source.helm.values }}`}}'
         path: '{{`{{ source.path }}`}}'
-        repoURL: 'git@github.com:Tiriyon/appmanifests.git'
+        repoURL: 'git@github.com:Tiriyon/demo-applications.git'
         {{/*
         targetRevision: main
         */}}
