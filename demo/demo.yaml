@@ -4,8 +4,6 @@ metadata:
   labels:
     app.kubernetes.io/instance: in-cluster-main-demo-app
     app.kubernetes.io/name: demo-app
-  name: in-cluster-main-demo-app-7ccd8bcbf8-f4g88
-  namespace: main
 spec:
   containers:
   - env:
