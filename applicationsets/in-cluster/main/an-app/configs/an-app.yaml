@@ -6,4 +6,4 @@ source:
   helm:
     values: |
       an-app:
-        replicaset: 3
+        replicas: 3
