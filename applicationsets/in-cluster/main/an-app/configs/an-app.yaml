@@ -5,5 +5,3 @@ source:
   path: demo_app
   helm:
     values: |
-      demo-app:
-        replicaCount: 3
