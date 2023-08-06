@@ -5,3 +5,5 @@ source:
   path: demo_app
   helm:
     values: |
+      an-app:
+        replicaset: 3
