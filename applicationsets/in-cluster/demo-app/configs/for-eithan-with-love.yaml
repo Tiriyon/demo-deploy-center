@@ -1,0 +1,7 @@
+argocd:
+  appName: ahhhhh
+destination:
+source:
+  path: demo_app
+  helm:
+    values: |
