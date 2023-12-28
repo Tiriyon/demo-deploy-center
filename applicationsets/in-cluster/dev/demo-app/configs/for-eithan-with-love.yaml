@@ -1,5 +1,5 @@
 argocd:
-  appName: ahhhhh
+  appName: dev2
 destination:
 source:
   path: demo_app
