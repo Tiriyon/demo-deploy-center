@@ -1,7 +1,0 @@
-argocd:
-  appName: test
-destination:
-source:
-  path: test
-  helm:
-    values: |
