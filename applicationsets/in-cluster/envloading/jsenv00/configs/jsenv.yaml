@@ -1,5 +1,5 @@
 argocd:
-  appName: jsenv
+  appName: jsenv00
 destination:
 source:
   path: jsenv
