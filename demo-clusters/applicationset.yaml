@@ -21,7 +21,7 @@ spec:
         path: 'demo-cluster/helm/demo-configmap'
         repoURL: 'git@github.com:Tiriyon/demo-deploy-center'
         targetRevision: main
-       syncPolicy:
-        automated: {}
-        syncOptions:
-          - CreateNamespace=true
+      syncPolicy:
+       automated: {}
+       syncOptions:
+         - CreateNamespace=true
