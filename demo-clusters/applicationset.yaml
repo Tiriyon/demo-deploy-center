@@ -8,7 +8,7 @@ spec:
   - clusters: {}
   template:
     metadata:
-      name: demo-configmap
+      name: '{{ name }}-demo-configmap'
     spec:
       project: default
       destination:
