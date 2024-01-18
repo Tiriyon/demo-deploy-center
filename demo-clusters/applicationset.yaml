@@ -16,9 +16,8 @@ spec:
         namespace: test-cm
       source:
         helm:
-          values: |
-            global:
-              wutcluster: '{{ name }}'
+          valuesObject: |
+            wutcluster: '{{ name }}'
         path: 'demo-clusters/helm/demo-configmap/'
         repoURL: 'git@github.com:Tiriyon/demo-deploy-center'
         targetRevision: main
