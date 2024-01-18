@@ -5,8 +5,8 @@ metadata:
 data:
   test: |
     {{- range .Values.clusters }}
-    {{- if eq .name .Values.wutcluster }}
-    {{ .Values.wutcluster }}
+    {{- if eq .name .wutcluster }}
+    {{ .wutcluster }}
     {{ .datapoint }}
     {{- end }}
     {{- end }}
