@@ -18,7 +18,7 @@ spec:
         helm:
           values: |
             wutcluster: '{{ name }}'
-        path: 'demo-clusters/helm/demo-configmap'
+        path: 'demo-clusters/helm/demo-configmap/'
         repoURL: 'git@github.com:Tiriyon/demo-deploy-center'
         targetRevision: main
       syncPolicy:
