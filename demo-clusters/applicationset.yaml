@@ -12,7 +12,7 @@ spec:
     spec:
       project: default
       destination:
-        name: '{{ server }}'
+        server: '{{ server }}'
         namespace: test-cm
       source:
         helm:
