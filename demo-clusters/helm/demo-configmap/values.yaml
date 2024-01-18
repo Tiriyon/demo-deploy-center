@@ -1,3 +1,4 @@
+wutcluster: ""
 clusters:
   - name: kind-argocd
     datapoint: "test string from kind-argocd cluster"
