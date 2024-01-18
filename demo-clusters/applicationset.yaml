@@ -10,14 +10,14 @@ spec:
     metadata:
       name: demo-configmap
     spec:
-      poject: default
+      project: default
       destination:
-        name: '{{ server }}'
+        name: '{{ item.server }}'
         namespace: test-cm
       source:
         helm:
           values: |
-            wutcluster: '{{ name }}'
+            wutcluster: '{{ item.name }}'
         path: 'demo-cluster/helm/demo-configmap'
         repoURL: 'git@github.com:Tiriyon/demo-deploy-center'
         targetRevision: main
