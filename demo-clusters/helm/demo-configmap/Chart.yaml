@@ -1,0 +1,6 @@
+apiVersion: v2
+name: demo-configmap
+description: A Helm chart for deploying a ConfigMap with cluster-specific data
+type: application
+version: 0.1.0
+appVersion: 1.0.0

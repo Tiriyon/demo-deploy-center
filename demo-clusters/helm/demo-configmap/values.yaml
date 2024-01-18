@@ -1,0 +1,5 @@
+clusters:
+  - name: kind-argocd
+    datapoint: "test string from kind-argocd cluster"
+  - name: kind-managed
+    datapoint: "test string from kind-managed"

@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+spec:
+  generators:
+    - cluster:
+        name: cluster
+        clusters:
+          - in-cluster
+          - kind-managed
+  template:
+    metadata:
+      name: demo-configmap
+    values: |
+      clusters:
+        - name: {{ cluster }}
