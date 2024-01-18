@@ -4,7 +4,7 @@ metadata:
   name: demo-configmap
 {{- $wutcluster := .Values.wutcluster -}}
 {{- range .Values.clusters }}
-{{- if eq .name $wtucluster }}
+{{- if eq .name $wutcluster }}
 data:
   test: {{ .datapoint }}
 {{- end }}
