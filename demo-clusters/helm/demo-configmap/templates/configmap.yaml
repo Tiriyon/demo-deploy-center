@@ -3,4 +3,9 @@ kind: ConfigMap
 metadata:
   name: demo-configmap
 data:
-  test: {{ .Values.clusters | select (index . "name" .Release.Name) | first | .datapoint }}
+  test: |
+    {{- range .Values.clusters }}
+    {{- if eq .name "wutcluster" }}
+    {{ .datapoint }}
+    {{- end }}
+    {{- end }}

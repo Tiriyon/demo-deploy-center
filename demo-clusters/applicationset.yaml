@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: cmcc
+  name: cm-cc
   namespace: argocd
 spec:
   generators:
@@ -13,6 +13,15 @@ spec:
   template:
     metadata:
       name: demo-configmap
-    values: |
-      clusters:
-        - name: {{ cluster }}
+    spec:
+      poject: default
+      destination:
+        name: {{ server }}
+        namespace: test-cm
+      source:
+        helm:
+          values: |
+            wutcluster: {{ name }}
+        path: 'demo-cluster/helm/demo-configmap'
+        repoURL: 'git@github.com:Tiriyon/demo-deploy-center'
+        targetRevision: main
