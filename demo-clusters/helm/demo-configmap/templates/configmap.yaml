@@ -4,7 +4,4 @@ metadata:
   name: demo-configmap
 data:
   test: |
-    {{- range .Values.clusters }}
     {{ .Values.wutcluster }}
-    {{ .datapoint }}
-    {{- end }}
