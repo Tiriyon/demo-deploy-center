@@ -12,12 +12,12 @@ spec:
     spec:
       poject: default
       destination:
-        name: {{ server }}
+        name: '{{ server }}'
         namespace: test-cm
       source:
         helm:
           values: |
-            wutcluster: {{ name }}
+            wutcluster: '{{ name }}'
         path: 'demo-cluster/helm/demo-configmap'
         repoURL: 'git@github.com:Tiriyon/demo-deploy-center'
         targetRevision: main
