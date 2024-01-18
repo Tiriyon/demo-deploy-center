@@ -1,7 +1,0 @@
-argocd:
-  appName: jsenv1
-destination:
-source:
-  path: jsenv
-  helm:
-    values: |
