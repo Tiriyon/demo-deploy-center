@@ -5,19 +5,19 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    - clusters: {}
+  - clusters: {}
   template:
     metadata:
       name: demo-configmap
     spec:
       project: default
       destination:
-        name: '{{ item.server }}'
+        name: '{{ server }}'
         namespace: test-cm
       source:
         helm:
           values: |
-            wutcluster: '{{ item.name }}'
+            wutcluster: '{{ name }}'
         path: 'demo-cluster/helm/demo-configmap'
         repoURL: 'git@github.com:Tiriyon/demo-deploy-center'
         targetRevision: main
