@@ -1,5 +1,0 @@
-values:
-  - ../helm/demo-configmap/values.yaml
-clusters:
-  - name: kind-argocd
-  - name: kind-managed
