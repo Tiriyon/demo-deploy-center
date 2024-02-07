@@ -1,0 +1,11 @@
+wutcluster: "in-cluster" #empty this
+clusters:
+  - name: in-cluster
+    datapoint: "test string from kind-argocd cluster"
+  - name: kind-managed
+    datapoint: "test string from kind-managed"
+
+ldap:
+  bindDN: # Distinguised Name cn=admin,ou=users,dc=example,dc=com
+  url: # ldap URL ldap://example.com:333/dc=exmple,dc=com?sAMAccountName
+  name: # Can be domain EXAMPLE.COM

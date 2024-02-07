@@ -1,6 +1,0 @@
-wutcluster: ""
-clusters:
-  - name: in-cluster
-    datapoint: "test string from kind-argocd cluster"
-  - name: kind-managed
-    datapoint: "test string from kind-managed"

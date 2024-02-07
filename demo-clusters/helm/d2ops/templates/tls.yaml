@@ -1,0 +1,18 @@
+{{- /*
+Template for OCP ingress controller TLS secret.
+Provide wildcard certificate and key for *.apps.<cluster-name>.base.domain e.g *.apps.ocpsys.fibi.corp
+*/}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: wildcard.{{ .Values.wutcluster }}.fibi.corp
+  namespace: openshift-ingress
+type: kubernetes.io/tls
+data:
+{{- $wutcluster := .Values.wutcluster -}}
+{{- $tls_dir := printf "clusters/%s/tls/*" $wutcluster }}
+{{- $files := .Files.Glob $tls_dir }}
+{{- range $path, $_ := $files }}
+  {{ base $path }}: |-
+  {{ tpl ($.Files.Get $path) $|b64enc | trimSuffix "\n" |  indent 4 }}
+{{- end }}

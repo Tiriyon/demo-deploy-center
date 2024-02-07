@@ -1,0 +1,7 @@
+appiVersion: v1
+kind: ConfigMap
+metadata:
+  name: custom-ca
+  namespace: openshift-config
+data:
+  ca-bundle.crt: |- {{ .Files.Get "shared/custom-ca.crt"  | nindent 8}}

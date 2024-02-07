@@ -1,0 +1,5 @@
+apiVersion: v2
+name: d2ops
+description: OCP cluster day 2 operations
+type: application
+version: 0.1.0

@@ -8,7 +8,7 @@ spec:
   - clusters: {}
   template:
     metadata:
-      name: '{{ name }}-demo-configmap'
+      name: '{{ name }}-d2ops'
     spec:
       project: default
       destination:
@@ -18,7 +18,7 @@ spec:
         helm:
           values: |
             wutcluster: '{{ name }}'
-        path: 'demo-clusters/helm/demo-configmap/'
+        path: 'demo-clusters/helm/d2ops/'
         repoURL: 'git@github.com:Tiriyon/demo-deploy-center'
         targetRevision: main
       syncPolicy:
