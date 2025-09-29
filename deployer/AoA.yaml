@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: deployer
-  namespace: gitops
+  namespace: clusterops
 spec:
   generators:
     - git:
@@ -18,7 +18,7 @@ spec:
     spec:
       destination:
         name: in-cluster
-        namespace: gitops
+        namespace: clusterops
       project: default
       source:
         helm:
