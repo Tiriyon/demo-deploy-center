@@ -37,4 +37,4 @@ spec:
           - CreateNamespace=true
         managedNamespaceMetadata:
           labels:
-          argocd.argoproj.io/managed-by: openshift-gitops # Add the necessary label to the namespace upon creation.
+          argocd.argoproj.io/managed-by: gitops # Add the necessary label to the namespace upon creation.
