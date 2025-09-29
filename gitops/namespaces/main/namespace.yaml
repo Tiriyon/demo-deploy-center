@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: main
+  labels:
+    # Required so OpenShift GitOps grants Argo admin over this ns
+    argocd.argoproj.io/managed-by: gitops
+    # (Optional) keep new label some clusters emit; harmless to include both
+    argocd.argoproj.io/managed-by-cluster-argocd: gitops
+  annotations:
+    # Ensure Namespace is created before namespaced objects in the same app
+    argocd.argoproj.io/sync-wave: "-1"
