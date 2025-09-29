@@ -5,13 +5,13 @@ metadata:
   namespace: gitops
 spec:
   generators:
-  - git:
-      directories:
-              #applicationsets/cluster/namespace/app
-              #applicationsets/namespace/cluster/app
-      - path: applicationsets/*/*/*
-      repoURL: 'git@github.com:Tiriyon/demo-deploy-center.git'
-      revision: main
+    - git:
+        directories:
+          #applicationsets/cluster/namespace/app
+          #applicationsets/namespace/cluster/app
+          - path: applicationsets/*/*/*
+        repoURL: "git@github.com:Tiriyon/demo-deploy-center.git"
+        revision: main
   template:
     metadata:
       name: asset-{{ path[1] }}-{{ path[2] }}-{{ path.basename }}
@@ -25,10 +25,13 @@ spec:
           values: |
             global:
               path: '{{ path }}'
-        path: '{{ path }}'
-        repoURL: 'git@github.com:Tiriyon/demo-deploy-center.git'
+        path: "{{ path }}"
+        repoURL: "git@github.com:Tiriyon/demo-deploy-center.git"
         targetRevision: main
       syncPolicy:
         automated: {}
         syncOptions:
           - CreateNamespace=true
+      managedNamespaceMetadata:
+        labels:
+          argocd.argoproj.io/managed-by: openshift-gitops # Add the necessary label to the namespace upon creation.
