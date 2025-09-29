@@ -11,7 +11,7 @@ spec:
     path: gitops/app-of-apps
   destination:
     server: https://kubernetes.default.svc
-    namespace: gitops
+    namespace: clusterops
   syncPolicy:
     automated:
       prune: true
