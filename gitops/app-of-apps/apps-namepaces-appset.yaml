@@ -17,7 +17,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/you/your-repo.git
+        repoURL: git@github.com:Tiriyon/demo-deploy-center.git
         targetRevision: main
         path: "gitops/namespaces/{{name}}"
       destination:
