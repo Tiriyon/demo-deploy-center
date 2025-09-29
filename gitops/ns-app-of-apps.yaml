@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ns-app-of-apps
+  namespace: gitops
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:Tiriyon/demo-deploy-center.git
+    targetRevision: main
+    path: gitops/app-of-apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gitops
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - PruneLast=true

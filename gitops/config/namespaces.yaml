@@ -1,0 +1,5 @@
+# gitops/config/namespaces.yaml
+namespaces:
+  - name: main
+  - name: demo-ns
+  # - name: another-ns
