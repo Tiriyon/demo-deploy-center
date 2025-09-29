@@ -35,3 +35,6 @@ spec:
         }
         syncOptions:
           - CreateNamespace=true
+        managedNamespaceMetadata:
+          labels:
+          argocd.argoproj.io/managed-by: openshift-gitops # Add the necessary label to the namespace upon creation.
