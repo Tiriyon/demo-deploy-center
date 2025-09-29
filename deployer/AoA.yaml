@@ -18,7 +18,7 @@ spec:
     spec:
       destination:
         name: in-cluster
-        namespace: argocd
+        namespace: gitops
       project: default
       source:
         helm:
